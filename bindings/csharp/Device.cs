@@ -208,7 +208,7 @@ namespace iio
         public readonly string name;
 
         /// <summary>The label of this device.</summary>
-        public readonly string label { get; private set; }
+        public string label { get; private set; }
 
         /// <summary>A <c>list</c> of all the attributes that this device has.</summary>
         public readonly List<Attr> attrs;
@@ -268,9 +268,9 @@ namespace iio
                 name = Marshal.PtrToStringAnsi(name_ptr);
             }
 
-            IntPtr label_ptr = iio_device_get_label(dev);
+            //IntPtr label_ptr = iio_device_get_label(dev);
 
-            label = label_ptr == IntPtr.Zero ? "" : Marshal.PtrToStringAnsi(label_ptr);
+            //label = label_ptr == IntPtr.Zero ? "" : Marshal.PtrToStringAnsi(label_ptr);
         }
 
         /// <summary>Get the <see cref="iio.Channel"/> object of the specified name.</summary>
